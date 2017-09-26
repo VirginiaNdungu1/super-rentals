@@ -1,0 +1,19 @@
+<h1> Welcome to Super Rentals </h1>
+We hope you find exactly what you're looking for in a place to stay.
+<br>
+{{#link-to 'about'}}About{{/link-to}}
+<hr> {{new-rental saveRental2="saveRental3"}}
+<br>
+<ul>
+  {{!--loop through each rental in model--}}
+  {{!--rental represents model object --}}
+  {{#each model.rentals as |rental|}}
+    {{!--render our new component rental-tile--}}
+    {{!--rental on left is a variable of the component--}}
+    {{!--rental on right refers to the model object in the current iteration of loop--}}
+    {{rental-tile rental=rental }}{{rental-cost rental}}
+  {{/each}}
+</ul>
+<hr>
+<hr>
+{{#link-to 'contact'}}Click here to contact us.{{/link-to}}

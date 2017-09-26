@@ -1,0 +1,13 @@
+Located in {{rental.city}}, this {{rental.bedrooms}} bedroom {{rental.type}} is available by arrangement through {{rental.owner}}.
+<br>
+<p><img src= {{rental.image}} alt= {{rental.type}}></p>
+
+<button {{action 'delete' rental}}>Delete</button>
+<hr>
+<h2> All Reviews </h2>
+{{rental-popularity rental}}
+<ul>
+  {{#each rental.reviews as |review|}}
+        {{review-tile review=review}}
+  {{/each}}
+</ul>

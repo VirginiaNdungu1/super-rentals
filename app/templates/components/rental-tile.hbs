@@ -1,0 +1,12 @@
+
+<li>
+  {{!--Displays rental details--}}
+   {{#link-to 'rental' rental.id}}{{rental.owner}}'s {{rental.type}} in {{rental.city}}{{/link-to}}
+{{!--If isImageShowing is set to false, display show Image Button--}}
+{{!--If isImageShowing is set to true, display rental image--}}
+  {{#if isImageShowing }}
+  <p><img src={{rental.image}} alt={{rental.type}} {{action 'imageHide'}}></p>
+{{else}}
+  <button {{action 'imageShow'}}>Show image</button>
+{{/if}}
+</li>
